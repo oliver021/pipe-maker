@@ -1,0 +1,44 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "no-namespace": true,
+        "only-arrow-functions": false,
+        "no-parameter-reassignment": true,
+        "no-invalid-this": true,
+        "no-var-keyword": true,
+        "strict-comparisons": true,
+        "switch-default": true,
+        "triple-equals": true,
+        "no-require-imports" :true,
+        "prefer-const": true,
+        "arrow-return-shorthand": true,
+        "binary-expression-operand-order": true,
+        "class-name": true,
+        "file-name-casing": true,
+        "static-this": true,
+        "member-ordering": [
+            true,
+            {
+              "alphabetize": false,
+              "order": [
+                "public-static-field",
+                "private-static-field",
+                "public-static-method",
+                "private-static-method",
+                "public-instance-field",
+                "private-instance-field",
+                "public-constructor",
+                "private-constructor",
+                "public-instance-method",
+                "protected-instance-method",
+                "private-instance-method"
+              ]
+            }
+          ]
+    },
+    "rulesDirectory": []
+}
