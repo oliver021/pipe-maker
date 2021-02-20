@@ -1,0 +1,36 @@
+{
+  "name": "func-pipe",
+  "version": "1.1.0",
+  "description": "Many functions as pipeline by Javascript",
+  "main": "lib/index.js",
+  "typings": "types/index.d.ts",
+  "private": false,
+  "scripts": {
+    "build": "tsc -p ./",
+    "dev": "tsc -p ./ -w",
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oliver021/func-pipe.git"
+  },
+  "keywords": [
+    "javascript",
+    "typescript",
+    "functional",
+    "pipe",
+    "function",
+    "helper"
+  ],
+  "author": "Oliver Valiente",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oliver021/func-pipe/issues"
+  },
+  "homepage": "https://github.com/oliver021/func-pipe#readme",
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "typescript": "^4.1.5"
+  }
+}
