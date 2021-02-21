@@ -1,4 +1,16 @@
+import AttemptsExceededError from './AttemptsExceeded';
 import { IPipelineMuted } from './PipelineMuted';
+import TryAgainError from './TryAgainError';
+import AbortPipelineError from '../types/AbortPipelineError';
+
+/**
+ * @const MaxAttempts {number}
+ */
+const MaxAttempts: number = 7;
+
+/**
+ * declration types
+ */
 export type PipeFunc<T> = (arg: T, next: () => void) => void;
 export type TransformFunc<T,K> = (arg: T) => K;
 
@@ -58,10 +70,24 @@ export class Pipeline<TInitial>{
        }
     }
 
-    private _run(arg:any, index: number){
+    private _run(arg:any, index: number, attempts: number = 0){
          if(this._pipes.length > index){
-            const current = this._pipes[index]
-            current(arg, () => this._run(arg, index+1));
+            try{
+                const current = this._pipes[index]
+                current(arg, () => this._run(arg, index+1));
+            }catch(err: unknown){
+                if(err instanceof TryAgainError){
+                    if(attempts < MaxAttempts){
+                       this._run(arg, index, attempts + 1);
+                    }else{
+                        throw new AttemptsExceededError();
+                    }
+                }else if(err instanceof AbortPipelineError){
+                    // silent throw
+                }else{
+                    throw err;
+                }
+            }
          }
     }
 }

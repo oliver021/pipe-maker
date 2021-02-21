@@ -20,6 +20,7 @@
         "class-name": true,
         "file-name-casing": true,
         "static-this": true,
+        "prefer-template": true,
         "member-ordering": [
             true,
             {
