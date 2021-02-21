@@ -6,7 +6,7 @@ import AbortPipelineError from '../types/AbortPipelineError';
 /**
  * @const MaxAttempts {number}
  */
-const MaxAttempts: number = 7;
+const MaxAttempts = 7;
 
 /**
  * declration types
@@ -32,7 +32,7 @@ export class Pipeline<TInitial>{
      * @access private
      * @description if is true the pipeline not executed all pipes
      */
-    private fake: boolean = false;
+    private fake = false;
 
     constructor(pipe?: PipeFunc<TInitial>){
         this._pipes = [];
@@ -70,7 +70,7 @@ export class Pipeline<TInitial>{
        }
     }
 
-    private _run(arg:any, index: number, attempts: number = 0){
+    private _run(arg:any, index: number, attempts = 0){
          if(this._pipes.length > index){
             try{
                 const current = this._pipes[index]
