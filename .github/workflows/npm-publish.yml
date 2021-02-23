@@ -44,5 +44,5 @@ jobs:
           node-version: 12
       - uses: JS-DevTools/npm-publish@v1
         with:
-          registry: https://npm.pkg.github.com/
+          registry: 'https://npm.pkg.github.com/'
           token: ${{ secrets.MY_ACCESS_TOKEN }}
