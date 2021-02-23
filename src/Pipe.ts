@@ -6,7 +6,7 @@ import { PipeFunc, Action } from './pipeline';
  */
 export class Pipe<T> {
     public get autoContinue() {
-        return this.action !== undefined;
+        return this.action !== null;
     }
     public func: PipeFunc<T> | null = null;
     public action: Action<T> | null = null;
