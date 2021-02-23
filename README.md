@@ -2,7 +2,7 @@
 [![Version](https://img.shields.io/npm/v/pipeline-runner.svg)](https://www.npmjs.com/package/pipeline-runner)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/oliver021/func-pipe#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/oliver021/func-pipe/graphs/commit-activity)
-[![License: MIT](https://img.shields.io/github/license/oliver021/pipeline-runner)](https://github.com/oliver021/func-pipe/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/oliver021/func-pipe)](https://github.com/oliver021/func-pipe/blob/master/LICENSE)
 
 >  This library provides a mechanism to create flows of calls to functions in the form of a pipeline with a fluid and very flexible API.
 
