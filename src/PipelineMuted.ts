@@ -1,4 +1,4 @@
-import { PipeFunc } from "./pipeline";
+import { PipeFunc } from "./Action";
 
 
 export interface IPipelineMuted<TInitial, K>  {

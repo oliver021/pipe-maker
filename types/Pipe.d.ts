@@ -1,7 +1,9 @@
-import { PipeFunc, Action } from './pipeline';
+import { PipeFunc, Action, AsyncPipe } from "./Action";
 export declare class Pipe<T> {
+    isAsync: boolean;
     get autoContinue(): boolean;
     func: PipeFunc<T> | null;
     action: Action<T> | null;
-    constructor(_func: any, _action: any);
+    funcAsync?: AsyncPipe<T>;
+    constructor(_func?: any, _action?: any);
 }

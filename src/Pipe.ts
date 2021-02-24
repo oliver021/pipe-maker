@@ -1,16 +1,18 @@
-import { PipeFunc, Action } from './pipeline';
+import { PipeFunc, Action, AsyncPipe } from "./Action";
 
 /**
  * @class Pipe
  * @description represent a pipe agent
  */
 export class Pipe<T> {
+    public isAsync = false;
     public get autoContinue() {
         return this.action !== null;
     }
     public func: PipeFunc<T> | null = null;
     public action: Action<T> | null = null;
-    constructor(_func: any, _action: any){
+    public funcAsync?: AsyncPipe<T>;
+    constructor(_func: any = null, _action: any = null){
         if(_func !== null){
             this.func = _func;
         }else if(_action !== null){
