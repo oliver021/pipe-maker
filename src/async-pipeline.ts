@@ -45,6 +45,13 @@ export class PipelineAsync<TContext> implements IPipelineAsync<TContext> {
         return this._runAsyncPipes(this.parent !== null ? this.parent?.run(arg) : arg);
     }
 
+    async runAll(source: AsyncIterable<TContext>, onComplete: () => void, onError: (err: unknown)=>void):
+    Promise<void>{
+        for await (const payload of source) {
+            this.run(payload, onComplete, onError);
+        }
+    }
+
     private async _runAsyncPipes(arg: TContext, index = 0): Promise<void>{
         if(this.pipes.length >= index){
             // no efffect to inkove 'next'
