@@ -88,6 +88,13 @@ Typescript allows to improve the development experience significantly for well-k
 
 > Note: Note that you are using functions in this pipeline without the next argument, an example of an auto continuous pipeline
 
+### Async Pipeline Support
+
+Not everything is synchronous and linear in Javascript, so it can come to us asynchronously certain
+information through events, service responses and etc, for that,
+a special type of pipeline is implemented, which works with asynchronous agents (pipes)
+where each process waits for its predecessor to be executed.
+
 ## Run tests
 
 You can run the many tests included in this repo, then you must clone this repo and install dependencies.
