@@ -94,7 +94,7 @@ export class Pipeline<TInitial>{
      */
     pipeAsync(pipe: AsyncPipe<TInitial>): PipelineAsync<TInitial>{
         const pipeline = new PipelineAsync<TInitial>(this);
-        pipeline.pipe(pipe);
+        pipeline.pipe(pipe); // new pipe to create async flow by Promise
         return pipeline;
     }
 
@@ -251,5 +251,7 @@ export function useCycleContext<T>(pipeline: Pipeline<T>, context: (provider: Pr
  * @return function as dispatcher
  */
 export function useDispatcher<T, K>(pipeline: Pipeline<T>, map: (arg: K) => T){
+    // dispacth is simple function
+    // return a dispatcher func
     return (arg: K) => pipeline.run(map(arg));
 }
