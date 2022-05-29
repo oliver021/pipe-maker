@@ -33,6 +33,14 @@ export class Pipeline<TInitial>{
     private fake = false;
 
     /**
+     * @property length()
+     * @returns {number} the number of pipes in the pipeline
+     */
+    get length(): number{
+        return this._pipes.length;
+    }
+
+    /**
      * @constructor
      * @param {Pipe<TInitial>} pipe initialize the first pipe
      */
@@ -120,7 +128,8 @@ export class Pipeline<TInitial>{
     run(arg: TInitial): TInitial{
        if(this.fake){
          if(this._pipes[0] !== null) {
-            return (this._pipes[0].action as Action<TInitial>)(arg) as unknown as TInitial;
+             (this._pipes[0].action as Action<TInitial>)(arg) as unknown as TInitial;
+             return arg;
          }else{
              throw new Error('Bad Tranformation');
          }

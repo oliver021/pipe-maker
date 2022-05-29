@@ -41,8 +41,9 @@ export class PipelineAsync<TContext> implements IPipelineAsync<TContext> {
         .catch(onError);
     }
 
-    runAsync(arg: TContext): Promise<void>{
-        return this._runAsyncPipes(this.parent !== null ? this.parent?.run(arg) : arg);
+    async runAsync(arg: TContext): Promise<TContext>{
+        await this._runAsyncPipes(this.parent !== null ? this.parent?.run(arg) : arg);
+        return arg;
     }
 
     async runAll(source: AsyncIterable<TContext>, onComplete: () => void, onError: (err: unknown)=>void):
@@ -53,11 +54,15 @@ export class PipelineAsync<TContext> implements IPipelineAsync<TContext> {
     }
 
     private async _runAsyncPipes(arg: TContext, index = 0): Promise<void>{
-        if(this.pipes.length >= index){
+        
+        // check pipes length
+        if(this.pipes.length <= index){
             // no efffect to inkove 'next'
             return ;
         }
+        
         const current = this.pipes[index];
+
         try{
             if(current.funcAsync !== null){
                 // executed promise as async code

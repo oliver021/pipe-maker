@@ -15,10 +15,10 @@ export class Pipe<T> {
     constructor(_func: any = null, _action: any = null){
         if(_func !== null){
             this.func = _func;
-        }else if(_action !== null){
+        } 
+        
+        if(_action !== null){
             this.action = _action;
-        }else{
-            throw new Error('Invalid Pipe arguments');
         }
     }
 }

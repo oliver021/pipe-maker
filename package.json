@@ -8,7 +8,7 @@
   "scripts": {
     "build": "tsc -p ./",
     "dev": "tsc -p ./ -w",
-    "test": "mocha test.js"
+    "test": "mocha -r ts-node/register ./tests/**.ts"
   },
   "repository": {
     "type": "git",
