@@ -1,5 +1,5 @@
 {
-  "name": "pipe-maker",
+  "name": "pipeline-maker",
   "version": "2.1.1",
   "description": "A library to create pipelines with small and smart classes.",
   "main": "lib/index.js",
