@@ -46,3 +46,4 @@ jobs:
           with:
             token: ${{ secrets.MY_ACCESS_TOKEN }}
             registry: https://npm.pkg.github.com/oliver021
+            check-version: false
