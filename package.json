@@ -1,6 +1,6 @@
 {
   "name": "pipeline-runner",
-  "version": "1.7.2",
+  "version": "2.1.1",
   "description": "Many functions as pipeline by Javascript",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
