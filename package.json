@@ -1,7 +1,7 @@
 {
-  "name": "pipeline-runner",
+  "name": "pipe-maker",
   "version": "2.1.1",
-  "description": "Many functions as pipeline by Javascript",
+  "description": "A library to create pipelines with small and smart classes.",
   "main": "lib/index.js",
   "typings": "types/index.d.ts",
   "private": false,
